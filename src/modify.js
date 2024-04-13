@@ -1,16 +1,20 @@
-const uppercaseAll = (word1, word2, word3) => {
-  return [
-    word1.toUpperCase(),
-    word2.toUpperCase(),
-    word3.toUpperCase(),
-  ];
+const uppercaseAll = (...words) => {
+let upperCaseWords = [];
+  for (let word of words) {
+    upperCaseWords.push(word.toUpperCase());
+  }
+  return upperCaseWords;
 };
 
+console.log(uppercaseAll("why", "did" ,'You', 'make', 'us', 'struggle', 'madhuri'))
+
 const destructureCoordinates = (coordinates) => {
-  const x = coordinates[0];
-  const y = coordinates[1];
+
+  const [x, y] = coordinates;
   return `X is: ${x}, Y is: ${y}`; // no touching this line!
 };
+console.log(destructureCoordinates([1, 3]))
+console.log(destructureCoordinates([2, 5]))
 
 module.exports = {
   uppercaseAll,
